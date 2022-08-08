@@ -2,7 +2,6 @@
 
 let btn = document.querySelector(".btn");
 let cardOut = document.querySelector(".card-output");
-
 let name = document.querySelector(".name");
 let email = document.querySelector(".email");
 let phone = document.querySelector(".phone");
