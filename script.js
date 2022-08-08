@@ -4,19 +4,10 @@ let btn = document.querySelector(".btn");
 let cardOut = document.querySelector(".card-output");
 
 let name = document.querySelector(".name");
-let nameOut = document.querySelector(".nameOut");
-
-let emailOut = document.querySelector(".emailOut");
 let email = document.querySelector(".email");
-
 let phone = document.querySelector(".phone");
-let phoneOut = document.querySelector(".phoneOut");
-
 let address = document.querySelector(".address");
-let addressOut = document.querySelector(".addressOut");
-
 let job = document.querySelector(".job");
-let jobOut = document.querySelector(".jobOut");
 
 let createHtmlElements = function (name, email, phone, address, job) {
   let nameOut = document.createElement("p");
