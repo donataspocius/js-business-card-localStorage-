@@ -1,6 +1,7 @@
 "use strict";
 
 let btn = document.querySelector(".btn");
+let cardOut = document.querySelector(".card-output");
 
 let name = document.querySelector(".name");
 let nameOut = document.querySelector(".nameOut");
@@ -17,16 +18,41 @@ let addressOut = document.querySelector(".addressOut");
 let job = document.querySelector(".job");
 let jobOut = document.querySelector(".jobOut");
 
-// let userData = {};
+let createHtmlElements = function (name, email, phone, address, job) {
+  let nameOut = document.createElement("p");
+  cardOut.append(nameOut);
+  nameOut.className = "nameOut";
+  document.querySelector(".nameOut").textContent = `${name}`;
+
+  let emailOut = document.createElement("p");
+  cardOut.append(emailOut);
+  emailOut.className = "emailOut";
+  document.querySelector(".emailOut").textContent = `${email}`;
+
+  let phoneOut = document.createElement("p");
+  cardOut.append(phoneOut);
+  phoneOut.className = "phoneOut";
+  document.querySelector(".phoneOut").textContent = `${phone}`;
+
+  let addressOut = document.createElement("p");
+  cardOut.append(addressOut);
+  addressOut.className = "addressOut";
+  document.querySelector(".addressOut").textContent = `${address}`;
+
+  let jobOut = document.createElement("p");
+  cardOut.append(jobOut);
+  jobOut.className = "jobOut";
+  document.querySelector(".jobOut").textContent = `${job}`;
+};
 
 btn.addEventListener("click", function (e) {
-  console.log(e.target);
-  nameOut.textContent = `${name.value}`;
-  emailOut.textContent = `${email.value}`;
-  phoneOut.textContent = `${phone.value}`;
-  addressOut.textContent = `${address.value}`;
-  jobOut.textContent = `${job.value}`;
-
+  createHtmlElements(
+    name.value,
+    email.value,
+    phone.value,
+    address.value,
+    job.value
+  );
   let userData = {
     name: name.value,
     email: email.value,
@@ -36,24 +62,18 @@ btn.addEventListener("click", function (e) {
   };
 
   window.localStorage.setItem("user", JSON.stringify(userData));
-
-  console.log(userData);
 });
 
 window.addEventListener("DOMContentLoaded", (e) => {
   let userData = JSON.parse(window.localStorage.getItem("user"));
-  console.log(userData);
-  console.log("loaded");
 
-  nameOut.textContent = `${userData.name}`;
-  emailOut.textContent = `${userData.email}`;
-  phoneOut.textContent = `${userData.phone}`;
-  addressOut.textContent = `${userData.address}`;
-  jobOut.textContent = `${userData.job}`;
+  if (!userData) return;
 
-  name.value = userData.name;
-  email.value = userData.email;
-  phone.value = userData.phone;
-  address.value = userData.address;
-  job.value = userData.job;
+  createHtmlElements(
+    userData.name,
+    userData.email,
+    userData.phone,
+    userData.address,
+    userData.job
+  );
 });
