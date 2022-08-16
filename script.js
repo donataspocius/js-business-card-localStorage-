@@ -2,8 +2,8 @@
 
 let btn = document.querySelector(".btn");
 let cardOut = document.querySelector(".card-output");
-let cardOutPhoto = document.querySelector(".card-output");
-let cardOutInfo = document.querySelector(".card-output");
+let cardOutPhoto = document.querySelector(".cardOutPhoto");
+let cardOutInfo = document.querySelector(".cardOutInfo");
 let name = document.querySelector(".name");
 let email = document.querySelector(".email");
 let phone = document.querySelector(".phone");
@@ -12,6 +12,7 @@ let job = document.querySelector(".job");
 
 let createHtmlElements = function (name, email, phone, address, job) {
   let nameOut = document.createElement("p");
+  // if (nameOut) cardOutPhoto.removeChild(nameOut);
   cardOutPhoto.append(nameOut);
   nameOut.className = "nameOut";
   document.querySelector(".nameOut").textContent = `${name}`;
@@ -20,21 +21,25 @@ let createHtmlElements = function (name, email, phone, address, job) {
   cardOutInfo.append(emailOut);
   emailOut.className = "emailOut";
   document.querySelector(".emailOut").textContent = `${email}`;
+  // cardOutInfo.removeChild(emailOut);
 
   let phoneOut = document.createElement("p");
   cardOutInfo.append(phoneOut);
   phoneOut.className = "phoneOut";
   document.querySelector(".phoneOut").textContent = `${phone}`;
+  // cardOutInfo.removeChild(phoneOut);
 
   let addressOut = document.createElement("p");
   cardOutInfo.append(addressOut);
   addressOut.className = "addressOut";
   document.querySelector(".addressOut").textContent = `${address}`;
+  // cardOutInfo.removeChild(addressOut);
 
   let jobOut = document.createElement("p");
   cardOutPhoto.append(jobOut);
   jobOut.className = "jobOut";
   document.querySelector(".jobOut").textContent = `${job}`;
+  // cardOutPhoto.removeChild(jobOut);
 };
 
 btn.addEventListener("click", function (e) {
