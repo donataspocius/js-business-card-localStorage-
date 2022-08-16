@@ -2,6 +2,8 @@
 
 let btn = document.querySelector(".btn");
 let cardOut = document.querySelector(".card-output");
+let cardOutPhoto = document.querySelector(".card-output");
+let cardOutInfo = document.querySelector(".card-output");
 let name = document.querySelector(".name");
 let email = document.querySelector(".email");
 let phone = document.querySelector(".phone");
@@ -10,27 +12,27 @@ let job = document.querySelector(".job");
 
 let createHtmlElements = function (name, email, phone, address, job) {
   let nameOut = document.createElement("p");
-  cardOut.append(nameOut);
+  cardOutPhoto.append(nameOut);
   nameOut.className = "nameOut";
   document.querySelector(".nameOut").textContent = `${name}`;
 
   let emailOut = document.createElement("p");
-  cardOut.append(emailOut);
+  cardOutInfo.append(emailOut);
   emailOut.className = "emailOut";
   document.querySelector(".emailOut").textContent = `${email}`;
 
   let phoneOut = document.createElement("p");
-  cardOut.append(phoneOut);
+  cardOutInfo.append(phoneOut);
   phoneOut.className = "phoneOut";
   document.querySelector(".phoneOut").textContent = `${phone}`;
 
   let addressOut = document.createElement("p");
-  cardOut.append(addressOut);
+  cardOutInfo.append(addressOut);
   addressOut.className = "addressOut";
   document.querySelector(".addressOut").textContent = `${address}`;
 
   let jobOut = document.createElement("p");
-  cardOut.append(jobOut);
+  cardOutPhoto.append(jobOut);
   jobOut.className = "jobOut";
   document.querySelector(".jobOut").textContent = `${job}`;
 };

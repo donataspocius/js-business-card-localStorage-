@@ -1,0 +1,60 @@
+body {
+  font-family: roboto, monospace;
+  font-size: 12px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 3fr;
+  margin: 200px auto;
+  max-width: 660px;
+  background-color: #c4c4c4;
+}
+
+.input-field:last-child {
+  margin-bottom: 33px;
+}
+
+.input-field:first-child {
+  margin-top: 37px;
+}
+
+.input-field {
+  margin-left: 18px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background-color: #be7c7c;
+}
+
+input,
+button {
+  display: block;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.card-output {
+  margin-left: 60px;
+  margin-top: 37px;
+  margin-right: 42px;
+  margin-bottom: 142px;
+  border: solid 1px;
+}
+
+.card-output {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.cardOutPhoto {
+  background-color: lightblue;
+}
+.cardOutInfo {
+  background-color: lightgreen;
+}
