@@ -67,4 +67,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
     userData.address,
     userData.job
   );
+
+  name.value = `${userData.name}`;
+  email.value = `${userData.email}`;
+  phone.value = `${userData.phone}`;
+  address.value = `${userData.address}`;
+  job.value = `${userData.job}`;
 });
